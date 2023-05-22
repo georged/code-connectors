@@ -30,9 +30,9 @@ There are two ways to install the connector:
 
 ### Power Platform CLI (recommended)
 
-> [!NOTE]
+> **NOTE**
 > That does not work at the moment as `create` command fails with the following error:
->
+> 
 > ```json
 > {
 >   "error": {
