@@ -15,7 +15,7 @@ There are two ways to install the connector:
 
 ### Manual
 
-1. Download [script.csx](https://github.com/georged/code-connectors/blob/main/csv-to-json/script.csx).
+1. Download [script.csx](https://github.com/georged/code-connectors/blob/main/csv-to-json/script.csx) (click on **... > Download** in the top right-hand corner).
 2. Sign in to https://make.powerapps.com.
 3. Select target environment.
 4. Select **Custom connectors** in the left navigation.
