@@ -11,4 +11,55 @@ There are two additional flags available:
 
 ## Installation
 
-TBD
+There are two ways to install the connector:
+
+### Manual
+
+1. Download [script.csx](https://github.com/georged/code-connectors/blob/main/csv-to-json/script.csx).
+2. Sign in to https://make.powerapps.com.
+3. Select target environment.
+4. Select **Custom connectors** in the left navigation.
+5. Select **+ New customer connector > Import an OpenAPI from URL**.
+   - Enter **CSV Magic** as Connector name.
+   - Copy and paste this URL: `https://raw.githubusercontent.com/georged/code-connectors/main/csv-to-json/apiDefinition.json` 
+6. Select **Import** then select **Continue**.
+7. Select **4. Code** in the navigation dropdown.
+8. Flip the switch to **Code Enabled**.
+9. Select **Upload** and upload **script.csx** saved earlier.
+10. Select **Create connector**.
+
+### Power Platform CLI (recommended)
+
+> [!NOTE]
+> That does not work at the moment as `create` command fails with the following error:
+>
+> ```json
+> {
+>   "error": {
+>     "code": "InvalidScriptDefinitionUrlWithNonNullOperations",
+>     "message": "Invalid custom connector settings. Script definition url '<null>' must be a valid URI when script operations are specified"
+>   }
+> }
+> ```
+
+What do you need?
+
+* Audactity to use command line
+* [Microsoft Power Platform CLI](https://learn.microsoft.com/power-platform/developer/cli/introduction)
+
+#### Steps
+
+1. Create auth profile if you don't have one already and make it active.
+
+   ```shell
+   pac auth create -n Code -u https://yoururl.crmN.dynamics.com
+   pac auth select -n Code
+   ```
+
+1. Upload custom connector
+
+   ```shell
+   pac connector create --settings-file settings.json
+   ```
+
+

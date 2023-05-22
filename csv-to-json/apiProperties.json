@@ -1,0 +1,10 @@
+{
+  "properties": {
+    "connectionParameters": {},
+    "iconBrandColor": "#ffffff",
+    "capabilities": [],
+    "scriptOperations": ["CsvToJson"],
+    "publisher": "George Doubinski",
+    "stackOwner": "George Doubinski"
+  }
+}
