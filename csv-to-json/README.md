@@ -23,26 +23,13 @@ There are two ways to install the connector:
    - Enter **CSV Magic** as Connector name.
    - Copy and paste this URL: `https://raw.githubusercontent.com/georged/code-connectors/main/csv-to-json/apiDefinition.json` 
 6. Select **Import** then select **Continue**.
-7. Select **4. Code** in the navigation dropdown.
+7. Select **Code** in the navigation dropdown.
 8. Flip the switch to **Code Enabled**.
 9. Select **Upload** and upload **script.csx** saved earlier.
 10. Select **CsvToJson** in the list of operations.
 11. Select **Create connector**.
 
 ### Power Platform CLI (recommended)
-
-> **Note**
-> 
-> That does not work at the moment as `create` command fails with the following error:
-> 
-> ```json
-> {
->   "error": {
->     "code": "InvalidScriptDefinitionUrlWithNonNullOperations",
->     "message": "Invalid custom connector settings. Script definition url '<null>' must be a valid URI when script operations are specified"
->   }
-> }
-> ```
 
 What do you need?
 

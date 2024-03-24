@@ -1,0 +1,94 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Default title",
+    "description": "Calculate standard aggregate functions for a given array.",
+    "version": "1.0"
+  },
+  "host": "powerautomate.microsoft.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Sum": {
+                  "type": "number",
+                  "format": "float",
+                  "description": "Sum"
+                },
+                "Average": {
+                  "type": "number",
+                  "format": "float",
+                  "description": "Average",
+                  "title": "Avg"
+                },
+                "Min": {
+                  "type": "number",
+                  "format": "float",
+                  "description": "Min"
+                },
+                "Max": {
+                  "type": "number",
+                  "format": "float",
+                  "description": "Max"
+                },
+                "StDev": {
+                  "type": "number",
+                  "format": "float",
+                  "description": "StDev"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Aggregate",
+        "description": "Calculates specified aggreate function",
+        "operationId": "Aggregate",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Values": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "description": "An object or a numeric value"
+                  },
+                  "description": "Values"
+                },
+                "Property": {
+                  "type": "string",
+                  "description": "Property to aggregate",
+                  "title": "Property"
+                }
+              },
+              "x-ms-visibility": "important"
+            },
+            "x-ms-visibility": "important"
+          }
+        ],
+        "x-ms-visibility": "important"
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {},
+  "security": [],
+  "tags": []
+}

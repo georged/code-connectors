@@ -1,0 +1,10 @@
+{
+  "properties": {
+    "connectionParameters": {},
+    "iconBrandColor": "#ffffff",
+    "capabilities": [],
+    "scriptOperations": ["Aggregate"],
+    "publisher": "George Doubinski",
+    "stackOwner": "George Doubinski"
+  }
+}
