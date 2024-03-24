@@ -24,7 +24,8 @@
                 "Sum": {
                   "type": "number",
                   "format": "float",
-                  "description": "Sum"
+                  "description": "Sum",
+                  "title": "Sum"
                 },
                 "Average": {
                   "type": "number",
@@ -35,17 +36,20 @@
                 "Min": {
                   "type": "number",
                   "format": "float",
-                  "description": "Min"
+                  "description": "Min",
+                  "title": "Min"
                 },
                 "Max": {
                   "type": "number",
                   "format": "float",
-                  "description": "Max"
+                  "description": "Max",
+                  "title": "Max"
                 },
                 "StDev": {
                   "type": "number",
                   "format": "float",
-                  "description": "StDev"
+                  "description": "StDev",
+                  "title": "StDev"
                 }
               }
             }
