@@ -67,7 +67,11 @@
             ["Avg"] = input.Average(),
             ["Max"] = input.Max(),
             ["Min"] = input.Min(),
-            ["StDev"] = StandardDeviation(input.ToArray())
+            ["StDev"] = StandardDeviation(input),
+            ["Variance"] = Variance(input),
+            ["Median"] = Median(input),
+            ["ModeSngl"] = ModeSngl(input),
+            ["Product"] = Product(input)
         };
 
         HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
@@ -75,11 +79,60 @@
         return response;
     }
 
-    static float StandardDeviation(float[] input)
+    static float StandardDeviation(List<float> input)
     {
-        if(input.Length == 0) return 0;
+        if(input.Count == 0) return 0;
         float avg = input.Average();
         float sum = input.Sum(v => (v - avg) * (v - avg));
-        return (float)Math.Sqrt(sum / input.Length);
+        return (float)Math.Sqrt(sum / input.Count);
+    }
+
+    static float Variance(List<float> input)
+    {
+        if(input.Count == 0) return 0;
+        float avg = input.Average();
+        float sum = input.Sum(v => (v - avg) * (v - avg));
+        return sum / input.Count;
+    }
+
+    static float Median(List<float> input)
+    {
+        if (input.Count == 0) return 0;
+        input.Sort();
+        int mid = input.Count / 2;
+        if (input.Count % 2 == 0)
+        {
+            return (input[mid] + input[mid - 1]) / 2;
+        }
+        return input[mid];        
+    }
+
+    static float ModeSngl(List<float> input)
+    {
+        if (input.Count == 0) return 0;
+        Dictionary<float, int> counts = new Dictionary<float, int>();
+        foreach (var value in input)
+        {
+            if (counts.ContainsKey(value))
+            {
+                counts[value]++;
+            }
+            else
+            {
+                counts[value] = 1;
+            }
+        }
+        return counts.OrderByDescending(kvp => kvp.Value).First().Key;
+    }
+
+    static float Product(List<float> input)
+    {
+        if (input.Count == 0) return 0;
+        float product = 1;
+        foreach (var value in input)
+        {
+            product *= value;
+        }
+        return product;
     }
 }

@@ -50,6 +50,30 @@
                   "format": "float",
                   "description": "StDev",
                   "title": "StDev"
+                },
+                "Median": {
+                  "type": "number",
+                  "format": "float",
+                  "description": "Median",
+                  "title": "Median"
+                },
+                "Variance": {
+                  "type": "number",
+                  "format": "float",
+                  "description": "Variance",
+                  "title": "Variance"
+                },
+                "ModeSngl": {
+                  "type": "number",
+                  "format": "float",
+                  "description": "ModeSngl",
+                  "title": "ModeSngl"
+                },
+                "Product": {
+                  "type": "number",
+                  "format": "float",
+                  "description": "Product",
+                  "title": "Product"
                 }
               }
             }
@@ -72,7 +96,8 @@
                     "type": "object",
                     "description": "An object or a numeric value"
                   },
-                  "description": "Values"
+                  "description": "Values",
+                  "title": "Values"
                 },
                 "Property": {
                   "type": "string",
