@@ -1,7 +1,9 @@
+
+
 {
   "swagger": "2.0",
   "info": {
-    "title": "Extract Json",
+    "title": "Extract JSON",
     "description": "Extracts JSON object properties matching specified Regex",
     "version": "1.0"
   },
@@ -19,39 +21,61 @@
           "default": {
             "description": "default",
             "schema": {
-              "title": "Response",
               "type": "object",
-              "properties": {},
-              "x-ms-visibility": "important"
+              "properties": {
+                "Output": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Output object",
+                  "title": "Output"
+                },
+                "Properties": {
+                  "type": "array",
+                  "title": "Properties",
+                  "description": "Array of object property names",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
             }
           }
         },
-        "summary": "Extract Json",
+        "summary": "Extract JSON",
         "operationId": "ExtractJson",
-        "description": "Extract Json",
+        "description": "Extract JSON",
         "x-ms-visibility": "important",
         "parameters": [
           {
             "name": "body",
             "in": "body",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
                 "Input": {
                   "type": "object",
                   "properties": {},
-                  "description": "Input"
+                  "title": "Input",
+                  "description": "Input object",
+                  "x-ms-visibility": "important"
                 },
                 "Regex": {
                   "type": "string",
-                  "description": "Regex"
+                  "description": "Regex expression to match property names",
+                  "title": "Regex",
+                  "x-ms-visibility": "important"
                 },
                 "Replace": {
                   "type": "string",
-                  "description": "Replace"
+                  "title": "Replace",
+                  "description": "Replacement expression",
+                  "x-ms-visibility": "important"
                 }
-              }
+              },
+              "required": [
+                "Input"
+              ]
             }
           }
         ]

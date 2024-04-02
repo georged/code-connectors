@@ -12,8 +12,8 @@ public class Script : ScriptBase
 
         JObject json = JObject.Parse(content);
 
-        string regex = json.GetValue("Regex")?.Value<string>();
-        string replace = json.GetValue("Replace")?.Value<string>();
+        string regex = json.GetValue("Regex")?.Value<string>() ?? "";
+        string replace = json.GetValue("Replace")?.Value<string>() ?? "";
         JObject input = json.GetValue("Input") as JObject;
         if (input == null)
         {
@@ -30,9 +30,10 @@ public class Script : ScriptBase
     }
 
     static JObject TransformJsonProperties(JObject originalJson, Regex propertyRegex, string replacementString)
-    {
+    {        
         // Create a new JObject to store the transformed properties
         JObject transformedJson = new JObject();
+        JArray propertyNames = new JArray();
 
         // Iterate over all JProperties in the original JObject
         foreach (var property in originalJson.Properties())
@@ -43,11 +44,16 @@ public class Script : ScriptBase
                 // Replace the matched part of the property name and add it to the new JObject
                 string newName = propertyRegex.Replace(property.Name, replacementString);
                 transformedJson.Add(newName, property.Value);
+
+                // Add the new property name to the array
+                propertyNames.Add(newName);
             }
         }
 
-        return transformedJson;
+        return new JObject() {
+            { "Output", transformedJson },
+            { "Properties", propertyNames }
+        };
     }
 
 }
-
