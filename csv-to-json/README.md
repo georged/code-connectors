@@ -16,12 +16,12 @@ There are two ways to install the connector:
 ### Manual
 
 1. Download [script.csx](https://github.com/georged/code-connectors/blob/main/csv-to-json/script.csx) (click on **... > Download** in the top right-hand corner).
-2. Sign in to https://make.powerapps.com.
+2. Sign in to [https://make.powerapps.com](https://make.powerapps.com).
 3. Select target environment.
 4. Select **Custom connectors** in the left navigation.
 5. Select **+ New customer connector > Import an OpenAPI from URL**.
-   - Enter **CSV Magic** as Connector name.
-   - Copy and paste this URL: `https://raw.githubusercontent.com/georged/code-connectors/main/csv-to-json/apiDefinition.json` 
+   * Enter **CSV Magic** as Connector name.
+   * Copy and paste this URL: `https://raw.githubusercontent.com/georged/code-connectors/main/csv-to-json/apiDefinition.json` 
 6. Select **Import** then select **Continue**.
 7. Select **Code** in the navigation dropdown.
 8. Flip the switch to **Code Enabled**.
@@ -33,7 +33,7 @@ There are two ways to install the connector:
 
 What do you need?
 
-* Audactity to use command line
+* Audacity to use command line
 * [Microsoft Power Platform CLI](https://learn.microsoft.com/power-platform/developer/cli/introduction)
 
 #### Steps
@@ -50,4 +50,3 @@ What do you need?
    ```shell
    pac connector create --settings-file settings.json
    ```
-
