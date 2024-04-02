@@ -1,0 +1,67 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Extract Json",
+    "description": "Extracts JSON object properties matching specified Regex",
+    "version": "1.0"
+  },
+  "host": "powerautomate.microsoft.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "title": "Response",
+              "type": "object",
+              "properties": {},
+              "x-ms-visibility": "important"
+            }
+          }
+        },
+        "summary": "Extract Json",
+        "operationId": "ExtractJson",
+        "description": "Extract Json",
+        "x-ms-visibility": "important",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Input": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Input"
+                },
+                "Regex": {
+                  "type": "string",
+                  "description": "Regex"
+                },
+                "Replace": {
+                  "type": "string",
+                  "description": "Replace"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {},
+  "security": [],
+  "tags": []
+}

@@ -1,0 +1,11 @@
+{
+  "properties": {
+    "connectionParameters": {},
+    "iconBrandColor": "#ffffff",
+    "capabilities": [],
+    "scriptOperations": ["ExtractJson"],
+    "publisher": "George Doubinski",
+    "stackOwner": "George Doubinski",
+    "policyTemplateInstances": []
+  }
+}
