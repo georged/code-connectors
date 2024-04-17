@@ -18,10 +18,14 @@
         "responses": {
           "default": {
             "description": "default",
-            "schema": {}
+            "schema": {
+              "description": "Converted object",
+              "title": "Output",
+              "x-ms-visibility": "important"
+            }
           }
         },
-        "summary": "CsvToJson",
+        "summary": "Csv To Json",
         "description": "CSV to JSON Converter",
         "operationId": "CsvToJson",
         "parameters": [
