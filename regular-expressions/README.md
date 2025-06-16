@@ -24,7 +24,7 @@ There are two ways to install the connector:
 7. Select **Code** tab in the navigation dropdown.
 8. Flip the switch to **Code Enabled**.
 9. Select **Upload** and upload **script.csx** saved earlier.
-10. Select **Aggregate** in the list of operations.
+10. Select **both RegexMatch and RegexReplace** in the list of operations to apply the code to.
 11. Select **Create connector**.
 
 ### Power Platform CLI (recommended)
