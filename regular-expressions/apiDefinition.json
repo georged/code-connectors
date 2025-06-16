@@ -1,0 +1,192 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Regular Expressions",
+        "description": "Provides support for .NET regular expressions to find matches in text based on a pattern.",
+        "version": "1.0"
+    },
+    "host": "make.powerautomate.com",
+    "basePath": "/",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [],
+    "produces": [],
+    "paths": {
+        "/RegexMatch": {
+            "post": {
+                "responses": {
+                    "default": {
+                        "description": "default",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "matches": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Groups": {
+                                                "type": "object"
+                                            },
+                                            "Success": {
+                                                "type": "boolean"
+                                            },
+                                            "Name": {
+                                                "type": "string"
+                                            },
+                                            "Captures": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "Index": {
+                                                "type": "integer"
+                                            },
+                                            "Length": {
+                                                "type": "integer"
+                                            },
+                                            "Value": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "description": "An array of the Match objects found by the search. If no matches are found, the method returns an empty array.",
+                                    "title": "Matches"
+                                },
+                                "isMatch": {
+                                    "type": "boolean",
+                                    "description": "Indicates whether the .NET regular expression finds a match in the input string.",
+                                    "title": "IsMatch"
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "Match Text using Regular Expressions",
+                "description": "Searches the specified input string for all occurrences of a specified .NET regular expression, using the specified matching options.",
+                "x-ms-visibility": "important",
+                "operationId": "RegexMatch",
+                "parameters": [
+                    {
+                        "name": "value",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "input": {
+                                    "type": "string",
+                                    "description": "The string to search for a match",
+                                    "title": "Text to Match"
+                                },
+                                "pattern": {
+                                    "type": "string",
+                                    "description": "The .NET regular expression pattern to match",
+                                    "title": "Regular Expression"
+                                },
+                                "options": {
+                                    "title": "Regex Options",
+                                    "description": "Value that specifies options for matching",
+                                    "type": "string",
+                                    "enum": [
+                                        "None",
+                                        "IgnoreCase",
+                                        "Singleline",
+                                        "Multiline"
+                                    ],
+                                    "default": "IgnoreCase"
+                                }
+                            },
+                            "required": [
+                                "options",
+                                "pattern",
+                                "input"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "/RegexReplace": {
+            "post": {
+                "responses": {
+                    "default": {
+                        "description": "default",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "output": {
+                                    "type": "string",
+                                    "description": "The replaced string. If no matches are found, the string will equal the input.",
+                                    "title": "Output"
+                                },
+                                "isMatch": {
+                                    "type": "boolean",
+                                    "description": "Indicates whether the .NET regular expression finds a match in the input string.",
+                                    "title": "IsMatch"
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "Replace Text using Regular Expressions",
+                "description": "Searches and replaces the specified input string for all occurrences of a specified .NET regular expression, using the specified matching options.",
+                "operationId": "RegexReplace",
+                "x-ms-visibility": "important",
+                "parameters": [
+                    {
+                        "name": "value",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "input": {
+                                    "type": "string",
+                                    "description": "The supplied input string to search in.",
+                                    "title": "Input Text"
+                                },
+                                "pattern": {
+                                    "type": "string",
+                                    "description": "The .NET regular expression pattern to match",
+                                    "title": "Regular Expression"
+                                },
+                                "newText": {
+                                    "type": "string",
+                                    "description": "The string to replace the matched text with.",
+                                    "title": "New Text"
+                                },
+                                "options": {
+                                    "title": "Regex Options",
+                                    "description": "Value that specifies options for matching",
+                                    "type": "string",
+                                    "enum": [
+                                        "None",
+                                        "IgnoreCase",
+                                        "Singleline",
+                                        "Multiline"
+                                    ],
+                                    "default": "IgnoreCase"
+                                }
+                            },
+                            "required": [
+                                "options",
+                                "pattern",
+                                "input",
+                                "newText"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "definitions": {},
+    "parameters": {},
+    "responses": {},
+    "securityDefinitions": {},
+    "security": [],
+    "tags": []
+}

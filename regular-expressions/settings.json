@@ -1,0 +1,10 @@
+{
+  "connectorId": null,
+  "environment": null,
+  "apiProperties": "apiProperties.json",
+  "apiDefinition": "apiDefinition.json",
+  "icon": "icon.png",
+  "script": "script.csx",
+  "powerAppsApiVersion": "2016-11-01",
+  "powerAppsUrl": "https://api.powerapps.com"
+}
