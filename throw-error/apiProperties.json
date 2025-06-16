@@ -1,0 +1,10 @@
+{
+  "properties": {
+    "connectionParameters": {},
+    "iconBrandColor": "#007ee5",
+    "capabilities": [],
+    "scriptOperations": ["ThrowError"],
+    "publisher": "Agnius Bartninkas",
+    "stackOwner": "Agnius Bartninkas"
+  }
+}
