@@ -1,0 +1,75 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Default title",
+    "description": "Throws an error with a custom message based on inputs provided",
+    "version": "1.0"
+  },
+  "host": "make.powerautomate.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/ThrowError": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "description": "message"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Throw Error",
+        "description": "Throws a custom error based on inputs provided.",
+        "operationId": "ThrowError",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "statusCode": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "The custom status code to be included in the error.",
+                  "title": "Status Code",
+                  "x-ms-visibility": "important"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "The custom message to be included as the error.",
+                  "title": "Message",
+                  "x-ms-visibility": "important"
+                }
+              },
+              "required": [
+                "message",
+                "statusCode"
+              ],
+              "x-ms-visibility": "important"
+            },
+            "x-ms-visibility": "important"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {},
+  "security": [],
+  "tags": []
+}
